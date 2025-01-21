@@ -59,28 +59,35 @@ DT (Asset Model)
 
 ---
 
-### **Asset Model Definitions**
+### **Detailed Asset Model Definitions**
 
-#### **1. DT Model**
+#### **1. Asset Model: DT**
 - **Name**: DT Model
-- **Properties**: None (logical parent only).
+- **Properties**:
+  - None (this is purely for hierarchy).
+- **Child Assets**:
+  - Fryer (inherits Fryer Model).
 
-#### **2. Fryer Model**
+#### **2. Asset Model: Fryer**
 - **Name**: Fryer Model
 - **Properties**:
   - Fryer ID (string).
   - Location (string).
   - Status (enum: {Active, Inactive, Maintenance}).
+- **Child Assets**:
+  - Single Vat (inherits Single Vat Model).
+  - Double Vat (inherits Double Vat Model).
 
-#### **3. Single Vat Model**
+#### **3. Asset Model: Single Vat**
 - **Name**: Single Vat Model
 - **Properties**:
   - Temperature (double, unit: °C).
   - Humidity (double, unit: %).
   - Electricity (double, unit: kWh).
   - Oil Level (double, unit: liters).
+- **No Child Assets**.
 
-#### **4. Double Vat Model**
+#### **4. Asset Model: Double Vat**
 - **Name**: Double Vat Model
 - **Properties**:
   - Temperature (double, unit: °C).
@@ -88,6 +95,7 @@ DT (Asset Model)
   - Electricity (double, unit: kWh).
   - Oil Level (double, unit: liters).
   - Vibration (double, unit: mm/s).
+- **No Child Assets**.
 
 ---
 
